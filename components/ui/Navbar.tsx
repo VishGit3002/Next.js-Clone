@@ -1,9 +1,19 @@
+"use client"
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "./button";
 import { Kbd } from "./kbd";
 
 const Navbar = () => {
+  // useEffect(() => {
+  //   const onScroll = () => {
+  //     if(window.scrollY > 10){
+  //     console.log("Scrolled");
+  //   }
+  //   }
+  //   window.addEventListener("scroll", onScroll);
+  //   return () => window.removeEventListener("scroll", onScroll);
+  // },[])
   const links = [
     { name: "Showcase", href: "/showcase" },
     { name: "Docs", href: "/docs" },
@@ -118,7 +128,7 @@ const Navbar = () => {
         {/* Right / actions area (placeholder) */}
         <div className="h-full w-full ml-auto flex items-center justify-end gap-3">
           <Button variant="secondary" className="text-[#888888] bg-[#1b1919]">Search Documentation
-            <Kbd className="ml-10 text-xl">⌘K</Kbd>
+            <Kbd className="ml-10 text-lg">⌘K</Kbd>
           </Button>
           <Button variant="outline">
             <svg
@@ -135,7 +145,7 @@ const Navbar = () => {
                 fill="white"
               />
             </svg>Deploy </Button>
-          <Button>Learn </Button>
+          <Button variant="ghost" className="bg-white/90 text-black">Learn </Button>
         </div>
       </div>
     </nav>

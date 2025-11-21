@@ -2,6 +2,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import Navbar from "@/components/ui/Navbar";
 import localFont from "next/font/local";
+import Footer from "@/components/ui/Footer";
 
 const Nextjs = localFont({
   src: [
@@ -21,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${Nextjs.className} font-sans`}>
+      <body className={`${Nextjs.className} font-sans bg-background text-foreground`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -30,6 +31,7 @@ export default function RootLayout({
         >
           <Navbar />
           {children}
+          {/* <Footer /> */}
         </ThemeProvider>
       </body>
     </html>
