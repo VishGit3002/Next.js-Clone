@@ -6,6 +6,20 @@ import { useEffect } from "react";
 // import Image from "next/image";
 
 export default function Home() {
+  const copyText = () => {
+    const textToCopy = document.querySelector(".copy")?.innerHTML;
+    if (textToCopy) {
+      navigator.clipboard.writeText(textToCopy).then(
+        () => {
+          console.log("Text copied to clipboard");
+        },
+        (err) => {
+          console.error("Could not copy text: ", err);
+        }
+      );
+    }
+  };
+
   useEffect(() => {
     animate(svg.createDrawable(".svg"), {
       draw: ["0 0 ", "0 1", "1 1"],
@@ -15,7 +29,7 @@ export default function Home() {
       direction: "alternate",
       strokeDasharray: ["0px, 1000px", "1000px, 1000px"],
     });
-    animate(".rotate", {})
+    animate(".rotate", {});
   }, []);
   return (
     <div className="bg-black h-screen pt-20 flex-col items-center justify-center text-center space-y-6">
@@ -66,8 +80,8 @@ export default function Home() {
             stroke="white"
           />
         </svg>
-        <div className="group flex items-center">
-          <p className="cursor-alias hover:text-gray-200 ">
+        <div className="group flex items-center " onClick={copyText}>
+          <p className="cursor-alias group-hover:text-gray-200 copy">
             ~ npx create-next-app@latest
           </p>
           <Copy className="h-4 w-5 ml-1 opacity-0 group-hover:opacity-100 transition duration-300" />
