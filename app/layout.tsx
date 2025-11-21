@@ -3,7 +3,7 @@ import { ThemeProvider } from "@/components/ui/theme-provider";
 import Navbar from "@/components/ui/Navbar";
 import localFont from "next/font/local";
 import Footer from "@/components/ui/Footer";
-import { Toaster } from "@/components/ui/sonner"
+import { Toaster } from "@/components/ui/sonner";
 
 const Nextjs = localFont({
   src: [
@@ -23,7 +23,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${Nextjs.className} font-sans bg-background text-foreground`}>
+      <body
+        className={`${Nextjs.className} font-sans bg-background text-foreground antialiased`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -31,8 +33,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          {children}
           <Toaster />
+          <main className="">{children}</main>
           {/* <Footer /> */}
         </ThemeProvider>
       </body>

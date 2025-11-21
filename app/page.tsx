@@ -1,19 +1,22 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Copy } from "lucide-react";
-import { animate, svg, stagger } from "animejs";
-import { useEffect } from "react";
+import { ChevronRight, Copy, Check } from "lucide-react";
+import { animate, svg, stagger, set } from "animejs";
+import { useEffect, useState } from "react";
 import { toast } from "sonner"
 
 // import Image from "next/image";
 
 export default function Home() {
+  const [copied, setCopied] = useState(false)
   const copyText = () => {
     const textToCopy = document.querySelector(".copy")?.innerHTML;
     if (textToCopy) {
       navigator.clipboard.writeText(textToCopy).then(
         () => {
+          setCopied(true);
           toast.success("Copied to clipboard!")
+          setTimeout(() => setCopied(false), 1000);
         },
         (err) => {
           console.error("Could not copy text: ", err);
@@ -86,7 +89,10 @@ export default function Home() {
           <p className="cursor-alias group-hover:text-gray-200 copy">
             ~ npx create-next-app@latest
           </p>
-          <Copy className="h-4 w-5 ml-1 opacity-0 group-hover:opacity-100 transition duration-300" />
+          {!copied && <Copy className="h-4 w-5 ml-1 opacity-0 group-hover:opacity-100 transition duration-300" />}
+          { copied && <Check className="h-4 w-5 ml-1" />}
+          
+          
         </div>
       </div>
       {/* Next page */}
