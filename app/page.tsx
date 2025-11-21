@@ -3,19 +3,19 @@ import { Button } from "@/components/ui/button";
 import { ChevronRight, Copy, Check } from "lucide-react";
 import { animate, svg, stagger, set } from "animejs";
 import { useEffect, useState } from "react";
-import { toast } from "sonner"
+import { toast } from "sonner";
 
 // import Image from "next/image";
 
 export default function Home() {
-  const [copied, setCopied] = useState(false)
+  const [copied, setCopied] = useState(false);
   const copyText = () => {
     const textToCopy = document.querySelector(".copy")?.innerHTML;
     if (textToCopy) {
       navigator.clipboard.writeText(textToCopy).then(
         () => {
           setCopied(true);
-          toast.success("Copied to clipboard!")
+          toast.success("Copied to clipboard!");
           setTimeout(() => setCopied(false), 1000);
         },
         (err) => {
@@ -38,9 +38,12 @@ export default function Home() {
   }, []);
   return (
     <div className="bg-black min-h-screen pt-20 flex-col items-center justify-center text-center space-y-6">
-      <h2 className="pt-12 font-bold text-xl rotate">
-        Catch up on what we released at Next.js Conf 25
-      </h2>
+      <div className="flex justify-center items-center mt-5 " >
+        <span className="rounded-2xl bg-blue-900/50 px-4 py-1 text-[#52a8ff]"> New</span>
+        <h2 className="ml-8 font-bold text-xl rotate">
+          Catch up on what we released at Next.js Conf 25
+        </h2>
+      </div>
       <Button className="rounded-full ">
         Find out more
         <ChevronRight />
@@ -89,10 +92,10 @@ export default function Home() {
           <p className="cursor-alias group-hover:text-gray-200 copy">
             ~ npx create-next-app@latest
           </p>
-          {!copied && <Copy className="h-4 w-5 ml-1 opacity-0 group-hover:opacity-100 transition duration-300" />}
-          { copied && <Check className="h-4 w-5 ml-1" />}
-          
-          
+          {!copied && (
+            <Copy className="h-4 w-5 ml-1 opacity-0 group-hover:opacity-100 transition duration-300" />
+          )}
+          {copied && <Check className="h-4 w-5 ml-1" />}
         </div>
       </div>
       {/* Next page */}
@@ -197,8 +200,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className="px-6 pt-6 pb-14">
-                    </div>
+                    <div className="px-6 pt-6 pb-14"></div>
                   </div>
                 </div>
               </div>
