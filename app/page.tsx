@@ -37,7 +37,7 @@ export default function Home() {
     animate(".rotate", {});
   }, []);
   return (
-    <div className="bg-black h-screen pt-20 flex-col items-center justify-center text-center space-y-6">
+    <div className="bg-black min-h-screen pt-20 flex-col items-center justify-center text-center space-y-6">
       <h2 className="pt-12 font-bold text-xl rotate">
         Catch up on what we released at Next.js Conf 25
       </h2>
@@ -198,7 +198,6 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="px-6 pt-6 pb-14">
-                      {/* Your code example */}
                     </div>
                   </div>
                 </div>
