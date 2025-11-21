@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import { Button } from "./button";
 import { Kbd } from "./kbd";
+import { Menu, Search, TextAlignCenter } from "lucide-react";
 
 const Navbar = () => {
   // useEffect(() => {
@@ -23,8 +24,8 @@ const Navbar = () => {
   ];
   return (
     // <header className="fixed top-0 left-0 w-screen z-50 bg-rose-600">
-    <nav className="bg-[#080808] fixed top-0 left-0 w-screen z-50 max-w-8xl mx-auto px-3 sm:px-6 lg:px-10 h-16 flex items-center border-b ">
-      <div className="flex items-center  h-full rounded-2xl px-2 w-full">
+    <nav className="bg-[#080808] fixed top-0 z-50 max-w-8xl w-full px-3 sm:px-6 lg:px-10 h-16 flex items-center border-b ">
+      <div className="flex items-center h-full w-full rounded-2xl mx-auto">
         {/* Logo group */}
         <div className="flex items-center ">
           {/* Vercel-style mark (decorative) */}
@@ -114,21 +115,37 @@ const Navbar = () => {
         </div>
 
         {/*  Center area (placeholder) */}
-        <div className="px-10 w-full">
+        <div className="px-10 hidden lg:flex items-center justify-center">
           {links.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-[#888888] mx-3  hover:text-white" 
+              className="text-[#888888] mx-3 text-sm hover:text-white transition-colors" 
             >
               {link.name}
             </Link>
           ))}
         </div>
+        {/* Mobile view */}
+        <div className="md:hidden ml-auto flex items-center space-x-5 group">
+            <Search size={24} className="hover:text-[#2f2e2e]" />
+            <TextAlignCenter size={24} className="hover:text-[#2f2e2e]" />
+        </div>
+
+
+
+
+
+
+
+
         {/* Right / actions area (placeholder) */}
-        <div className="h-full w-full ml-auto flex items-center justify-end gap-3">
-          <Button variant="secondary" className="text-[#888888] bg-[#1b1919]">Search Documentation
-            <Kbd className="ml-10 text-lg">⌘K</Kbd>
+        <div className="hidden h-full w-full ml-auto md:flex items-center justify-end gap-3">
+          <Button variant="secondary" className="text-[#888888] bg-[#1c1b1b] hidden lg:flex">Search Documentation...
+            <Kbd className=" lg:ml-10 text-lg">⌘K</Kbd>
+          </Button>
+          <Button variant="secondary" className="text-[#888888] bg-[#1c1b1b] lg:hidden md:flex sm:hidden">Search...
+            <Kbd className=" lg:ml-10 text-lg">⌘K</Kbd>
           </Button>
           <Button variant="outline">
             <svg
