@@ -3,6 +3,7 @@ import { ThemeProvider } from "@/components/ui/theme-provider";
 import Navbar from "@/components/ui/Navbar";
 import localFont from "next/font/local";
 import Footer from "@/components/ui/Footer";
+import { Toaster } from "@/components/ui/sonner"
 
 const Nextjs = localFont({
   src: [
@@ -31,6 +32,7 @@ export default function RootLayout({
         >
           <Navbar />
           {children}
+          <Toaster />
           {/* <Footer /> */}
         </ThemeProvider>
       </body>

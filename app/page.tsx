@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { ChevronRight, Copy } from "lucide-react";
 import { animate, svg, stagger } from "animejs";
 import { useEffect } from "react";
+import { toast } from "sonner"
+
 // import Image from "next/image";
 
 export default function Home() {
@@ -11,7 +13,7 @@ export default function Home() {
     if (textToCopy) {
       navigator.clipboard.writeText(textToCopy).then(
         () => {
-          console.log("Text copied to clipboard");
+          toast.success("Copied to clipboard!")
         },
         (err) => {
           console.error("Could not copy text: ", err);
