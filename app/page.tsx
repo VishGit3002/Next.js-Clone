@@ -52,7 +52,7 @@ export default function Home() {
         Find out more
         <ChevronRight />
       </Button>
-      <h1 className="text-7xl font-bold mt-20">
+      <h1 className="sm:text-5xl md:text-7xl font-bold mt-20 ">
         &nbsp;The React Framework for the Web&nbsp;
       </h1>
       <h3 className="text-xl mt-15 text-[#888888]">

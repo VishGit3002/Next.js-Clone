@@ -152,7 +152,9 @@ body {
     @apply bg-background text-foreground;
 	}
   ::selection {
-	background: red;
-	color: black;
+	@apply bg-accent-foreground text-accent;
+  }
+  ::-webkit-scrollbar {
+	display: none;
   }
 }
