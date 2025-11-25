@@ -62,7 +62,7 @@ export default function Home() {
       </h1>
       <h3 className="text-xl mt-15 text-[#888888] dark:text-[#888888]">
         Used by some of the world&apos;s largest companies, Next.js enables you
-        to create <span className="text-black shadow-lg dark:text-white">high-</span>
+        to create <span className="text-black dark:text-white">high-</span>
       </h3>
       <h3 className="text-xl mt-[-15px] text-[#888888] dark:text-[#888888]">
         <span className="text-black dark:text-white">quality web applications</span> with the

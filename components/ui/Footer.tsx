@@ -27,7 +27,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="border-t border-white/10 bg-black text-zinc-400 py-12 md:py-16 relative z-50">
+    <footer className="border-t border-white/10 bg-background text-foreground py-12 md:py-16 relative z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div
           variants={containerVariants}
