@@ -34,10 +34,15 @@ export default function Home() {
       direction: "alternate",
       strokeDasharray: ["0px, 1000px", "1000px, 1000px"],
     });
-    animate(".rotate", {});
+    // animate(".rotate", {
+    //   rotate: [0, 360],
+    //   duration: 2000,
+    //   loop: true,
+    //   direction: "alternate",
+    // });
   }, []);
   return (
-    <div className="bg-black min-h-screen pt-20 flex-col items-center justify-center text-center space-y-6">
+    <div className="bg-white dark:bg-black min-h-screen pt-20 flex-col items-center justify-center text-center space-y-6">
       <div className="flex justify-center items-center mt-5 " >
         <span className="rounded-2xl bg-blue-900/50 px-4 py-1 text-[#52a8ff]"> New</span>
         <h2 className="ml-8 font-bold text-xl rotate">
@@ -55,19 +60,19 @@ export default function Home() {
       <h1 className="sm:text-5xl md:text-7xl font-bold mt-20 ">
         &nbsp;The React Framework for the Web&nbsp;
       </h1>
-      <h3 className="text-xl mt-15 text-[#888888]">
+      <h3 className="text-xl mt-15 text-[#888888] dark:text-[#888888]">
         Used by some of the world&apos;s largest companies, Next.js enables you
-        to create <span className="text-white">high-</span>
+        to create <span className="text-black shadow-lg dark:text-white">high-</span>
       </h3>
-      <h3 className="text-xl mt-[-15px] text-[#888888]">
-        <span className="text-white">quality web applications</span> with the
+      <h3 className="text-xl mt-[-15px] text-[#888888] dark:text-[#888888]">
+        <span className="text-black dark:text-white">quality web applications</span> with the
         power of React components.
       </h3>
       <div className="mt-20 space-x-5 ">
-        <Button variant="default" className="bg-white text-black h-13 w-35">
+        <Button variant="default" className="bg-black text-white h-13 w-35 dark:bg-white dark:text-black">
           Get Started
         </Button>
-        <Button variant="outline" className="h-13 w-35">
+        <Button variant="outline" className="h-13 w-35 dark:bg-black dark:text-white">
           Learn Next.js
         </Button>
       </div>
@@ -92,14 +97,11 @@ export default function Home() {
           <p className="cursor-alias group-hover:text-gray-200 copy">
             ~ npx create-next-app@latest
           </p>
-          {!copied && (
-            <Copy className="h-4 w-5 ml-1 opacity-0 group-hover:opacity-100 transition duration-300" />
-          )}
-          {copied && <Check className="h-4 w-5 ml-1" />}
+          {copied ? <Check className="h-4 w-5 ml-1" /> : <Copy className="h-4 w-5 ml-1 opacity-0 group-hover:opacity-100 transition duration-200" />}
         </div>
       </div>
       {/* Next page */}
-      <div className="bg-black py-24 sm:py-32">
+      <div className="py-24 sm:py-32">
         <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
           <h2 className="text-center text-base/7 font-semibold text-indigo-400">
             Deploy faster
