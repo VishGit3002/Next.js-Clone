@@ -5,6 +5,7 @@ import { Button } from "./button";
 import { Kbd } from "./kbd";
 import { Menu, Search, TextAlignCenter } from "lucide-react";
 import { ModeToggle } from "./toggle-theme";
+import links from "@/constants/Navlinks";
 
 const Navbar = () => {
   // useEffect(() => {
@@ -16,13 +17,7 @@ const Navbar = () => {
   //   window.addEventListener("scroll", onScroll);
   //   return () => window.removeEventListener("scroll", onScroll);
   // },[])
-  const links = [
-    { name: "Showcase", href: "/showcase" },
-    { name: "Docs", href: "/docs" },
-    { name: "Blog", href: "/blog" },
-    { name: "Template", href: "https://vercel.com/templates/next.js" },
-    { name: "Enterprise", href: "/enterprise" },
-  ];
+  
   return (
     // <header className="fixed top-0 left-0 w-screen z-50 bg-rose-600">
     <nav className="bg-background fixed top-0 z-50 max-w-8xl w-full px-3 sm:px-6 lg:px-10 h-16 flex items-center border-b border-gray-200 dark:border-gray-800">
@@ -130,17 +125,10 @@ const Navbar = () => {
           ))}
         </div>
         {/* Mobile view */}
-        <div className="md:hidden ml-auto flex items-center space-x-5 group">
+        <div className="md:hidden ml-auto flex items-center space-x-5 group border border-gray-500">
             <Search size={24} className="hover:text-[#2f2e2e]" />
-            <TextAlignCenter size={24} className="hover:text-[#2f2e2e]" />
+            <TextAlignCenter size={24} className="hover:text-[#2f2e2e]" onClick={() => {}} />
         </div>
-
-
-
-
-
-
-
 
         {/* Right / actions area (placeholder) */}
         <div className="hidden h-full w-full ml-auto md:flex items-center justify-end gap-3">

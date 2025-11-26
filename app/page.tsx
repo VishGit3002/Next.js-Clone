@@ -4,6 +4,7 @@ import { ChevronRight, Copy, Check } from "lucide-react";
 import { animate, svg, stagger, set } from "animejs";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
+import { ShimmeringText } from "@/components/shimmering-text";
 
 // import Image from "next/image";
 
@@ -58,7 +59,7 @@ export default function Home() {
         <ChevronRight />
       </Button>
       <h1 className="sm:text-5xl md:text-7xl font-bold mt-20 ">
-        &nbsp;The React Framework for the Web&nbsp;
+        &nbsp;<ShimmeringText text="The React Framework for the Web" duration={2} /> &nbsp;
       </h1>
       <h3 className="text-xl mt-15 text-[#888888] dark:text-[#888888]">
         Used by some of the world&apos;s largest companies, Next.js enables you
@@ -95,7 +96,7 @@ export default function Home() {
         </svg>
         <div className="group flex items-center " onClick={copyText}>
           <p className="cursor-alias group-hover:text-gray-200 copy">
-            ~ npx create-next-app@latest
+            <ShimmeringText text=" ~ npx create-next-app@latest" duration={2} />
           </p>
           {copied ? <Check className="h-4 w-5 ml-1" /> : <Copy className="h-4 w-5 ml-1 opacity-0 group-hover:opacity-100 transition duration-200" />}
         </div>

@@ -27,7 +27,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="border-t border-white/10 bg-background text-foreground py-12 md:py-16 relative z-50">
+    <footer className="border-t border-white/10 bg-white dark:bg-black text-foreground py-12 md:py-16 relative z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div
           variants={containerVariants}
@@ -39,10 +39,10 @@ const Footer = () => {
           {/* Brand Column */}
           <motion.div variants={itemVariants} className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="h-8 w-8 rounded-lg bg-white/10 flex items-center justify-center border border-white/10">
+              <div className="h-8 w-8 rounded-lg bg-black flex items-center justify-center border border-white/10">
                 <div className="h-4 w-4 rounded-full bg-white" />
               </div>
-              <span className="text-white font-bold text-lg tracking-tight">Gemini</span>
+              <span className="text-foreground font-bold text-lg tracking-tight">Gemini</span>
             </Link>
             <p className="text-sm leading-relaxed mb-6">
               Building the next generation of web applications with modern technologies.
@@ -62,7 +62,7 @@ const Footer = () => {
 
           {/* Resources Column */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-white font-semibold mb-4">Resources</h3>
+            <h3 className="text-foreground font-semibold mb-4">Resources</h3>
             <ul className="space-y-3 text-sm">
               <li>
                 <Link href="/docs" className="hover:text-white transition-colors">
@@ -89,7 +89,7 @@ const Footer = () => {
 
           {/* Company Column */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-white font-semibold mb-4">Company</h3>
+            <h3 className="text-foreground font-semibold mb-4">Company</h3>
             <ul className="space-y-3 text-sm">
               <li>
                 <Link href="#" className="hover:text-white transition-colors">
@@ -116,7 +116,7 @@ const Footer = () => {
 
           {/* Legal Column */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-white font-semibold mb-4">Legal</h3>
+            <h3 className="text-foreground font-semibold mb-4">Legal</h3>
             <ul className="space-y-3 text-sm">
               <li>
                 <Link href="#" className="hover:text-white transition-colors">
@@ -142,7 +142,7 @@ const Footer = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs"
+          className="mt-12 pt-8 border-t border-gray-200 dark:border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs"
         >
           <p>© {new Date().getFullYear()} Gemini Inc. All rights reserved.</p>
           <div className="flex gap-6">
